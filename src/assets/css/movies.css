@@ -1,0 +1,41 @@
+.movieDetails{
+    color: white;
+    display: flex;
+    gap: 30px;
+}
+
+.redColor{
+    color: #EB473D;
+}
+
+.leftSideContent{
+    margin-left: 30px;
+}
+
+.leftSideContent h1{
+    text-align: center;
+}
+
+.leftSideSub{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: -30px;
+}
+
+.leftSideContent h4{
+    font-size: 23px;
+}
+
+.leftSideContent p{
+    font-size: 20px;
+}
+
+.rightSideContent{
+    margin-right: 30px;
+}
+
+.rightSideContent img{
+    height: 70vh;
+    width: auto;
+}

@@ -1,0 +1,71 @@
+header{
+    margin: 45px 100px 45px 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logoAndNavLinks{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 100px;
+}
+
+.logo{
+    width: 300px;
+    height: auto;
+}
+
+
+.rightDiv{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.userImg{
+    width: 40px;
+    height: auto;
+    margin-top: 50px;
+}
+
+.navLinks{
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+}
+
+.navLink{
+    text-decoration: none;
+}
+
+.navLinks h3{
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 34.22px;
+    text-align: right;
+    color: white;
+}
+
+@media screen and (max-width: 767.98px) {
+    header{
+        margin: 20px 20px 27px 20px;
+    }
+    
+    .logo{
+        width: 145px;
+        height: 47px;
+    }
+
+    .navLinks{
+        display: flex;
+        flex-direction: row;
+        margin-left: 43px;
+        gap: 26px;
+    }
+
+    .navLinks h3{
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+}

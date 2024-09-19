@@ -1,0 +1,32 @@
+.gallery{
+    padding: 50px;
+    width: calc(100vw - 5%);
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    row-gap: 100px;
+    margin: 0 auto 0 auto;
+    border-radius: 25px;
+}
+
+
+@media screen and (max-width: 767.98px) {
+    .gallery{
+        background-color: inherit;
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: 22px auto 0 auto;
+        padding: 0;
+        gap: 20px;
+    }
+
+    .logementCard{
+        margin-left: auto;
+        width: 335px;
+        height: 255px;
+        margin-right: auto;
+    }
+}
