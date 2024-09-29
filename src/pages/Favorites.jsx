@@ -1,21 +1,61 @@
+import Gallery from "../components/Gallery/Gallery";
+import { useState, useEffect } from "react";
+import SearchBar from "../components/SearchBar/SearchBar";
+
 function Favorites() {
-const url = 'https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1';
-const options = {
-  method: 'GET',
-  headers: {
-    accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwN2M4Nzc4MWEzOTM4NDUzODZjMDYxYWZjZjMxN2ExZSIsIm5iZiI6MTcyNjA1ODI4MC40MDExODMsInN1YiI6IjY2ZTE4ZDViNjk2MThkYTZjMDVmMDA5ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.hebfCBv_DD_XRnev-bgHXNeXdVEVtCVEJC0p6JPkuLY'
-  }
-};
+  const [movies, setMovies] = useState([]);
+  const [moviesFiltered, setMoviesFiltered] = useState([]);
+  const [error, setError] = useState(false);
 
-fetch(url, options)
-  .then(res => res.json())
-  .then(json => console.log(json))
-  .catch(err => console.error('error:' + err));
+  const fetchMovieDetails = async (id) => {
+    const url = `https://api.themoviedb.org/3/movie/${id}?language=en-US`;
+    const options = {
+      method: 'GET',
+      headers: {
+        accept: 'application/json',
+        Authorization: `Bearer ${import.meta.env.VITE_APP_API_KEY}`,
+      },
+    };
 
+    try {
+      const response = await fetch(url, options);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return await response.json();
+    } catch (error) {
+      setError(true);
+      console.error('Fetch error: ', error);
+      return null; 
+    }
+  };
+
+  const getFavoritesMovies = async () => {
+    const keys = Object.keys(localStorage);
+    const fetchPromises = keys.map(async (key) => {
+      const movieData = JSON.parse(localStorage.getItem(key));
+      return await fetchMovieDetails(movieData.id);
+    });
+
+    const results = await Promise.all(fetchPromises);
+    setMovies(results.filter(movie => movie !== null));
+    setMoviesFiltered(results.filter(movie => movie !== null));
+  };
+
+  useEffect(() => {
+    getFavoritesMovies();
+  }, []);
 
   return (
     <>
+      {movies.length > 0 ? (
+        <>
+          <SearchBar movie={movies} setMovieFiltered = {setMoviesFiltered}/>
+          <Gallery movie={moviesFiltered} />
+        </>
+      ) : (
+        <h1 style={{ color: 'white', textAlign: 'center' }}>There is no movie in your favorites...</h1>
+      )}
     </>
   );
 }

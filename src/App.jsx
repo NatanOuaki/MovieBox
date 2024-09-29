@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Popular from './pages/Popular';
 import Movies from './pages/Movies';
 import Categories from './pages/Categories';
+import Category from './pages/Category';
 import Favorites from './pages/Favorites';
 import ErrorPage from './pages/ErrorPage';
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/popular" element={<Popular />} />
         <Route path="/movies/:id" element={<Movies />} />
         <Route path="/categories" element={<Categories />} />
+        <Route path="//category/:id" element={<Category />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>

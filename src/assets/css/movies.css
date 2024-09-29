@@ -16,6 +16,19 @@
     text-align: center;
 }
 
+.leftSideTitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.heart{
+    width: 30px;
+    height: auto;
+}
+
 .leftSideSub{
     display: flex;
     flex-direction: row;

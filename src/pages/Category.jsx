@@ -1,14 +1,16 @@
 import Gallery from "../components/Gallery/Gallery";
 import { useState, useEffect } from "react";
+import { useParams } from 'react-router-dom';
 import SearchBar from "../components/SearchBar/SearchBar";
 
-function Popular() {
+function Category() {
+  const { id } = useParams(); 
   const [movie, setMovie] = useState(null);
   const [movieFiltered, setMovieFiltered] = useState(null);
 
 
   function getDataMovie() {
-    const url = 'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1';
+    const url = `https://api.themoviedb.org/3/discover/movie?with_genres=${id}`;
     const options = {
       method: 'GET',
       headers: {
@@ -38,4 +40,4 @@ function Popular() {
   );
 }
 
-export default Popular;
+export default Category;

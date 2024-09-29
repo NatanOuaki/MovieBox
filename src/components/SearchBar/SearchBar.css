@@ -1,0 +1,14 @@
+input{
+    width: 23vw;
+    margin-top: -55px;
+    margin-left: 70%;
+    margin-bottom: 30px;
+    margin-right: 20%;
+    height: 30px;
+    background-color: black;
+    border: 2px solid white;
+    color: white;
+    font-size: 20px;
+    font-family: "League Spartan", sans-serif;
+    padding: 5px 20px 5px;
+}

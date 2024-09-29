@@ -25,3 +25,17 @@
     line-height: 25.67px;
     z-index: 1;
 }
+
+.heartIcon {
+    position: absolute;
+    opacity: 0;
+}
+
+.movieCard:hover .heartIcon {
+    position: absolute;
+    bottom: 50px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+}

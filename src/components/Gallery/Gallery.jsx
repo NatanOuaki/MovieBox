@@ -1,9 +1,10 @@
 import './gallery.css';
 import MovieCard from '../MovieCard/MovieCard';
 
+
 function Gallery({ movie }) {
   if (!movie) {
-    return <p>Loading movies...</p>;
+    return <></>;
   }
 
   return (

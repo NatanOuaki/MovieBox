@@ -52,9 +52,6 @@ function Header() {
             </div>
             <div className='rightDiv'>
                 <NavLink to="/" className="link">
-                    <img className="userImg" src={search} alt="Search Icon" />
-                </NavLink>
-                <NavLink to="/" className="link">
                     <img className="userImg" src={userImg} alt="User Icon" />
                 </NavLink>
             </div>
