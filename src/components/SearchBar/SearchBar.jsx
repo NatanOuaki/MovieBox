@@ -12,7 +12,7 @@ function SearchBar({ movie, setMovieFiltered }) {
     }
 
     return (
-        <input type="text" placeholder="Search a movie..."  onChange={handleChange}/>
+        <input className="searchBoxInput" type="text" placeholder="Search a movie..."  onChange={handleChange}/>
     );
 }
 

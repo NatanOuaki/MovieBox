@@ -17,7 +17,7 @@ const Movies = () => {
       method: 'GET',
       headers: {
         accept: 'application/json',
-        Authorization: `Bearer ${import.meta.env.VITE_APP_API_KEY}`
+        Authorization: `Bearer ${import.meta.env.VITE_APP_API_KEY_TMDB}`
       }
     };
 

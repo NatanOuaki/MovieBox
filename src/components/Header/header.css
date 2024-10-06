@@ -16,22 +16,15 @@ header{
     height: auto;
 }
 
-
-.rightDiv{
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
-
 .userImg{
     width: 40px;
     height: auto;
-    margin-top: 50px;
 }
 
 .navLinks{
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 60px;
 }
 
@@ -46,6 +39,15 @@ header{
     text-align: right;
     color: white;
 }
+
+.rightDiv{
+    display: flex;
+    flex-direction: row;
+    column-gap: 30px;
+    color:"white";
+    cursor: pointer;
+}
+
 
 @media screen and (max-width: 767.98px) {
     header{

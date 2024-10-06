@@ -9,6 +9,8 @@ import Categories from './pages/Categories';
 import Category from './pages/Category';
 import Favorites from './pages/Favorites';
 import ErrorPage from './pages/ErrorPage';
+import Login from './pages/Login';
+import SignUp from './pages/SignUp';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path="/categories" element={<Categories />} />
         <Route path="//category/:id" element={<Category />} />
         <Route path="/favorites" element={<Favorites />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signUp" element={<SignUp />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />
@@ -29,4 +33,3 @@ function App() {
 }
 
 export default App;
-
